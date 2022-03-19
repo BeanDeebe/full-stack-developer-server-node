@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<Link to="/qqq/3/4">
+EWQ</Link>
+<Link to="/www/8/4">
+DSA</Link>
+
+const X = () => {
+const {q, w} = useParams()
+return(
+<span>{q + w}</span>
+)
+}
+
+const Y = () => {
+const {e, r} = useParams()
+return(
+<span>{e - r}</span>
+)
+}
+<BrowserRouter>
+    <Routes>
+        <Route path="/qqq/:q/:w" element={X}/>
+            <Route path="/www/:e/:r" element={Y}/>
+    </Routes>
+</BrowserRouter>
+
+
+</body>
+</html>
