@@ -2,7 +2,7 @@ import people from './users/users.js'
 
 let users = people;
 
-const userController = (app) => {
+const usersController = (app) => {
     app.get('/api/users', findAllUsers);
     app.get('/api/users/:uid', findUserById);
     app.post('/api/users', createUser);
@@ -51,4 +51,4 @@ const findAllUsers = (req, res) => {
     res.json(users);
 }
 
-export default userController;
+export default usersController;
