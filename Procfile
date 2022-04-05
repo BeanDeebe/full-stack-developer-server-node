@@ -1,1 +1,1 @@
-web: node server.js
+web: node full-stack-developer-server-node/server.js
