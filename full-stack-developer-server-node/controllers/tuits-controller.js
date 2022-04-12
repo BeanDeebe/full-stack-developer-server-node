@@ -1,4 +1,12 @@
-import tuitsDao from "../daos/tuits-dao.js";
+import * as tuitsDao from "../daos/tuits-dao.js";
+
+const tuitController = (app) => {
+    app.post('/api/tuits', createTuit);
+    app.get('/api/tuits', findAllTuits);
+    app.put('/api/tuits/:tid', updateTuit);
+    app.delete('/api/tuits/:tid', deleteTuit);
+    app.get('/')
+}
 
 const createTuit = async (req, res) => {
     const newTuit = req.body;
@@ -24,10 +32,5 @@ const deleteTuit = async (req, res) => {
     res.send(status);
 }
 
-export default (app) => {
-    app.post('/api/tuits', createTuit);
-    app.get('/api/tuits', findAllTuits);
-    app.put('/api/tuits/:tid', updateTuit);
-    app.delete('/api/tuits/:tid', deleteTuit);
-    app.get('/')
-}
+export default tuitController;
+
