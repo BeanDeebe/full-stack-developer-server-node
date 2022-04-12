@@ -3,7 +3,7 @@ import cors from 'cors';
 import usersController from "./controllers/users-controller.js";
 import tuitsController from "./controllers/tuits-controller.js";
 import helloController from "./controllers/hello-controller.js";
-import * as tuitsDao from "./daos/tuits-dao.js";
+import tuitsDao from "./daos/tuits-dao.js";
 import mongoose from 'mongoose';
 
 
@@ -15,6 +15,7 @@ app.use(express.json());
 
 const p = tuitsDao.findAllTuits();
 p.then((tuits) => console.log(tuits));
+
 helloController(app);
 usersController(app);
 tuitsController(app);

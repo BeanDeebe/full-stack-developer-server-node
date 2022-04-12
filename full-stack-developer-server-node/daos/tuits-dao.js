@@ -1,19 +1,8 @@
 import tuitsModel from '../models/tuits-model.js';
 
-export const createTuit = async (newTuit) => {
-    return await tuitsModel.create(newTuit);
-}
+const findAllTuits = () => tuitsModel.find();
+const createTuit = (tuit) => tuitsModel.create(tuit);
+const deleteTuit = (tid) => tuitsModel.deleteOne({_id: tid});
+const updateTuit = (tid, tuit) => tuitsModel.updateOne({_id: tid}, {$set: tuit});
 
-export const findAllTuits = async () => {
-    return tuitsModel.find();
-}
-
-export const updateTuit = async (tid, tuit) => {
-    return tuitsModel.updateOne(
-        {_id: tid}, {$set: tuit}
-    );
-}
-
-export const deleteTuit = async (tid) => {
-    return tuitsModel.deleteOne(tid);
-}
+export default {findAllTuits, createTuit, updateTuit, deleteTuit};
