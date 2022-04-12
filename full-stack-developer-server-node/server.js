@@ -5,8 +5,14 @@ import tuitsController from "./controllers/tuits-controller.js";
 import helloController from "./controllers/hello-controller.js";
 import tuitsDao from "./daos/tuits-dao.js";
 import mongoose from 'mongoose';
-mongoose.connect('mongodb://localhost:27017/webdev');
+
+const DB_CONNECTION_STRING = "mongodb+srv://deanbeebe:PoiLkjMnb123!@webdev.apu22.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
+    || 'mongodb://localhost:27017/webdev'
+mongoose.connect(CONNECTION_STRING);
+
 const app = express();
+
 
 app.use(cors());
 app.use(express.json());
